@@ -127,9 +127,9 @@ RMSD:        calyx region RMSD increases slightly → conformational adaptation
 
 ## Author
 
-**[Your Name]**  
+**Chalakon Pornjariyawatch**  
 DPST Scholar | COMFHA Research Group / SIMATEC Digital Chemistry R&D  
-[github.com/yourhandle](https://github.com/yourhandle)
+[github.com/cpornjar](https://github.com/cpornjar)
 
 ---
 
