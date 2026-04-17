@@ -55,7 +55,7 @@ Generate these from GROMACS before running:
 
 | File | Description |
 |------|-------------|
-| `md_1000ns.tpr` | GROMACS topology/run input |
+| `md.tpr` | GROMACS topology/run input |
 | `traj_comp.xtc` | Compressed trajectory |
 
 ---
