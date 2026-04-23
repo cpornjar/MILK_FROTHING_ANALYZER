@@ -1,7 +1,7 @@
 """
 milk_frothing_analyzer.py
 ==========================
-Unified MD Analysis Tool สำหรับ 1BEB β-lactoglobulin
+Unified MD Analysis Tool for 1BEB β-lactoglobulin
 ที่ Air-Water Interface (Milk Frothing System)
 
 4 analyses:
