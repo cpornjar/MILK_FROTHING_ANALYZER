@@ -4,13 +4,13 @@ milk_frothing_analyzer.py
 Unified MD Analysis Tool สำหรับ 1BEB β-lactoglobulin
 ที่ Air-Water Interface (Milk Frothing System)
 
-รวม 4 analyses:
+4 analyses:
   1. RMSD  — structural stability (backbone, beta-sheet, helix, calyx)
   2. SASA  — surface accessibility (total, hydrophobic, hydrophilic, calyx)
   3. Z-position — protein location relative to air-water interface
   4. Orientation — hydrophobic patch direction vs Z-axis
 
-Author  : [Your Name] — COMFHA Research Group / SIMATEC
+Author  : Chalakon Pornjariyawatch — COMFHA Research Group
 GitHub  : https://github.com/[yourhandle]/milk-frothing-analyzer
 License : MIT
 
@@ -173,7 +173,7 @@ def run_rmsd(tpr: str, xtc: str, stride: int, outdir: Path):
 
     # Plot
     fig, axes = plt.subplots(2, 2, figsize=(13, 8), sharex=True)
-    fig.suptitle("1BEB — RMSD Analysis  |  COMFHA / SIMATEC", fontsize=13)
+    fig.suptitle("1BEB — RMSD Analysis  |  COMFHA", fontsize=13)
     axes = axes.flatten()
 
     for ax, (color, (label, (t, r))) in zip(axes, zip(colors, results.items())):
@@ -254,7 +254,7 @@ def run_sasa(tpr: str, xtc: str, stride: int, outdir: Path):
     ]
 
     fig, axes = plt.subplots(2, 2, figsize=(13, 8), sharex=True)
-    fig.suptitle("1BEB — SASA Analysis  |  COMFHA / SIMATEC", fontsize=13)
+    fig.suptitle("1BEB — SASA Analysis  |  COMFHA", fontsize=13)
     axes = axes.flatten()
 
     for ax, (data, color, title, subtitle) in zip(axes, datasets):
@@ -321,7 +321,7 @@ def run_z_position(tpr: str, xtc: str, stride: int, outdir: Path):
     print(f"  Adsorption status      : {'✓ ADSORBED' if adsorbed else '✗ NOT YET ADSORBED'}")
 
     fig, axes = plt.subplots(2, 1, figsize=(11, 7), sharex=True)
-    fig.suptitle("1BEB — Z-Position Tracking  |  COMFHA / SIMATEC", fontsize=13)
+    fig.suptitle("1BEB — Z-Position Tracking  |  COMFHA", fontsize=13)
 
     ax1 = axes[0]
     ax1.fill_between(t, zu_nm, zl_nm, alpha=0.12, color=C_BLUE,
@@ -391,7 +391,7 @@ def run_orientation(tpr: str, xtc: str, stride: int, outdir: Path):
     print(f"    ~90° → patch pointing SIDEWAYS — rotating or in bulk")
 
     fig, axes = plt.subplots(3, 1, figsize=(11, 10), sharex=True)
-    fig.suptitle("1BEB — Orientation Analysis  |  COMFHA / SIMATEC", fontsize=13)
+    fig.suptitle("1BEB — Orientation Analysis  |  COMFHA", fontsize=13)
 
     panels = [
         (zp, C_BLUE,   "Protein CoM — Z position",
@@ -435,7 +435,7 @@ def save_dashboard(rmsd_r, z_r, orient_r, sasa_r, outdir: Path):
     has_sasa = sasa_r is not None
     n_rows   = 3 if has_sasa else 2
     fig, axes = plt.subplots(n_rows, 2, figsize=(14, 5 * n_rows))
-    fig.suptitle("1BEB Milk Frothing — MD Analysis Dashboard  |  COMFHA / SIMATEC",
+    fig.suptitle("1BEB Milk Frothing — MD Analysis Dashboard  |  COMFHA",
                  fontsize=13, fontweight="bold")
 
     # RMSD — backbone
@@ -514,7 +514,7 @@ AVAILABLE = ["rmsd", "sasa", "z", "orientation", "dashboard"]
 
 def build_parser():
     p = argparse.ArgumentParser(
-        description="Unified 1BEB MD Analyzer — COMFHA / SIMATEC",
+        description="Unified 1BEB MD Analyzer — COMFHA",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -555,7 +555,7 @@ def main():
     run = set(args.run)
 
     print("\n" + "═" * 60)
-    print("  1BEB Milk Frothing MD Analyzer  |  COMFHA / SIMATEC")
+    print("  1BEB Milk Frothing MD Analyzer  |  COMFHA")
     print("═" * 60)
     print(f"  TPR    : {args.tpr}")
     print(f"  XTC    : {args.xtc}")
